@@ -1,0 +1,11 @@
+name: supabase-keepalive
+on:
+  schedule: [{ cron: "0 6 */6 * *" }]   # every 6 days
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          sudo apt-get update && sudo apt-get install -y postgresql-client
+          psql "${{ secrets.SUPABASE_DATABASE_URL }}" -c "SELECT 1;"
