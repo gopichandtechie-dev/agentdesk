@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment
+.env
+
+# Mac
+.DS_Store
+
+# Firebase / GCP secrets
+*.json
+
+# Logs
+*.log
